@@ -1,0 +1,24 @@
+{
+  "name": "cashstream",
+  "version": "0.1.0",
+  "description": "Agent-first CashStream connector and skills for Codex.",
+  "author": {
+    "name": "Quentin"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "CashStream",
+    "shortDescription": "Read and update CashStream through your agent.",
+    "longDescription": "Adds the CashStream MCP connector plus skills for agent-driven finance review, transaction creation, and statement analysis.",
+    "developerName": "Quentin",
+    "category": "Productivity",
+    "capabilities": ["MCP", "Read", "Write"],
+    "defaultPrompt": [
+      "Analyze this bank statement and add the transactions.",
+      "Find my recent transactions in CashStream.",
+      "Review my recurring flows and envelopes."
+    ],
+    "brandColor": "#0C7C4F"
+  },
+  "mcpServers": "./.mcp.json"
+}
