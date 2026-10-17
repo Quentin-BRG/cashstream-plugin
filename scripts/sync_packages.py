@@ -37,9 +37,9 @@ def package_files(root: Path, client: str) -> dict[str, bytes]:
             "composerIcon": "./assets/logo.png",
             "logo": "./assets/logo.png",
             "defaultPrompt": [
-                "Review my recent CashStream transactions and envelopes.",
-                "Import this bank statement into my CashStream account.",
-                "Show my upcoming bills and recurring income."
+                "Explain how CashStream accounts, envelopes, and transactions relate.",
+                "How do scheduled occurrences and actual payments work in CashStream?",
+                "Import these transactions into my CashStream account."
             ]
         }
         server.update({"oauth_resource": endpoint, "scopes": SCOPES})

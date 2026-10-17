@@ -6,7 +6,7 @@ from __future__ import annotations
 import json
 import re
 from pathlib import Path
-from urllib.parse import urlsplit
+from urllib.parse import unquote, urlsplit
 
 import jsonschema
 import yaml
@@ -50,8 +50,18 @@ def validate() -> list[str]:
         errors.append("plugin version must follow semantic versioning")
 
     skills = list((ROOT / "skills").glob("*/SKILL.md"))
-    if not skills:
-        errors.append("at least one canonical skill is required")
+    if {path.parent.name for path in skills} != {"cashstream", "cashstream-import-statement"}:
+        errors.append("keep the CashStream documentation and transaction-import skills as the two entry points")
+    # The import workflow shares the documentation skill's model. References
+    # may cross skill folders but must resolve within the distributed package.
+    for path in [ROOT / "README.md", *(ROOT / "skills").rglob("*.md")]:
+        for link in re.findall(r"\[[^\]]*\]\(([^\s)]+)\)", path.read_text(encoding="utf-8")):
+            url = urlsplit(link)
+            if url.scheme or url.netloc or not url.path:
+                continue
+            target = (path.parent / unquote(url.path)).resolve()
+            if ROOT.resolve() not in target.parents or not target.is_file():
+                errors.append(f"{path.relative_to(ROOT)}: missing or escaping reference {link}")
     for path in skills:
         text = path.read_text(encoding="utf-8")
         match = re.match(r"\A---\n(.*?)\n---\n(.+)\Z", text, re.S)

@@ -1,4 +1,4 @@
 interface:
-  display_name: "Import a bank statement"
-  short_description: "Import a statement while checking for duplicates"
-  default_prompt: "Use $cashstream-import-statement to add this statement to my CashStream account."
+  display_name: "Import transactions"
+  short_description: "Import and reconcile CashStream transactions"
+  default_prompt: "Use $cashstream-import-statement to import these transactions into my CashStream account."

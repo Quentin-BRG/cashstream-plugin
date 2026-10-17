@@ -1,7 +1,7 @@
 {
   "name": "cashstream",
-  "version": "0.2.0",
-  "description": "Manage accounts, transactions, recurring flows, and budget envelopes through the CashStream MCP service.",
+  "version": "0.2.1",
+  "description": "Understand CashStream objects and relationships, and import transactions through its MCP service.",
   "author": {
     "name": "Quentin-BRG",
     "url": "https://github.com/Quentin-BRG"

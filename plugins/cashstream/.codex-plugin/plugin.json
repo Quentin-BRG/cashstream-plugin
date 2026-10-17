@@ -1,7 +1,7 @@
 {
   "name": "cashstream",
-  "version": "0.2.0",
-  "description": "Manage accounts, transactions, recurring flows, and budget envelopes through the CashStream MCP service.",
+  "version": "0.2.1",
+  "description": "Understand CashStream objects and relationships, and import transactions through its MCP service.",
   "author": {
     "name": "Quentin-BRG",
     "url": "https://github.com/Quentin-BRG"
@@ -20,7 +20,7 @@
   "interface": {
     "displayName": "CashStream",
     "shortDescription": "The precision of a spreadsheet, without the friction.",
-    "longDescription": "Manage accounts, transactions, recurring flows, and budget envelopes through the CashStream MCP service.",
+    "longDescription": "Understand CashStream objects and relationships, and import transactions through its MCP service.",
     "developerName": "Quentin-BRG",
     "category": "Productivity",
     "capabilities": [
@@ -32,9 +32,9 @@
     "composerIcon": "./assets/logo.png",
     "logo": "./assets/logo.png",
     "defaultPrompt": [
-      "Review my recent CashStream transactions and envelopes.",
-      "Import this bank statement into my CashStream account.",
-      "Show my upcoming bills and recurring income."
+      "Explain how CashStream accounts, envelopes, and transactions relate.",
+      "How do scheduled occurrences and actual payments work in CashStream?",
+      "Import these transactions into my CashStream account."
     ]
   }
 }

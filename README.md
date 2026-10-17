@@ -5,19 +5,27 @@
 Connect your agent to [CashStream](https://cashstream.quentin-berger.fr) to manage
 accounts, transactions, recurring flows, and budget envelopes.
 
-Version `0.2.0` includes a portable Agent Plugins package, a Codex package, and a
+Version `0.2.1` includes a portable Agent Plugins package, a Codex package, and a
 Claude Code package. Both client packages are generated from the same canonical
 skills. Their MCP endpoint is `https://cashstream.quentin-berger.fr/mcp`.
 
 ## Included skills
 
-- **`cashstream`** reads and updates CashStream data, with account matching,
-  pagination, transfers, and a distinction between scheduled flows and payments.
-- **`cashstream-import-statement`** reads a user-provided statement or transaction
-  list, checks duplicates, and adds the decided transactions directly through MCP.
+- **[`cashstream`](skills/cashstream/SKILL.md)** is reference documentation:
+  accounts, payees, transactions and split lines, envelopes, recurring business
+  objects, occurrences, and their relationships. Its
+  [data model](skills/cashstream/references/data-model.md) and
+  [MCP contract](skills/cashstream/references/mcp-contract.md) explain balances,
+  statuses, transfers, partial payments, and tool capabilities. Loading it does
+  not start a workflow or change records.
+- **[`cashstream-import-statement`](skills/cashstream-import-statement/SKILL.md)**
+  imports transactions from statements, CSV/PDF files, screenshots, pasted
+  lists, or messages. It matches existing records, reconciles settled planned
+  entries, checks duplicates, assigns split envelopes, and links known payments
+  to scheduled occurrences before writing the decided changes through MCP.
 
-Further workflows are proposed in [Skills proposés](docs/SKILLS_PROPOSES.md).
-They are not installed skills in this release.
+The package intentionally has two skills: the shared documentation and the
+transaction-import workflow. Both use the same object model and live MCP tools.
 
 ## Authentication and permissions
 
@@ -95,13 +103,13 @@ OAuth compatibility; the Claude package is a preview until that flow is tested.
 ```text
 plugin.json                         Portable Agent Plugins manifest
 mcp.json                            Portable MCP configuration
-skills/                             Canonical skills and optional UI metadata
+skills/cashstream/                   Documentation skill and shared references
+skills/cashstream-import-statement/  Transaction-import skill
 assets/                             CashStream icon
 plugins/cashstream/                  Generated Codex compatibility package
 plugins/claude/                      Generated Claude Code compatibility package
 .agents/plugins/marketplace.json     Codex repository marketplace
 .claude-plugin/marketplace.json      Claude Code repository marketplace
-docs/SKILLS_PROPOSES.md              Proposed next workflows
 scripts/                            Sync, validation, and ZIP packaging
 ```
 
@@ -120,8 +128,8 @@ python scripts/validate_plugin.py
 python scripts/build_plugin.py
 ```
 
-Builds create `dist/cashstream-portable-0.2.0.zip`,
-`dist/cashstream-codex-0.2.0.zip`, and `dist/cashstream-claude-0.2.0.zip`.
+Builds create `dist/cashstream-portable-0.2.1.zip`,
+`dist/cashstream-codex-0.2.1.zip`, and `dist/cashstream-claude-0.2.1.zip`.
 CI validates schema conformance, skill metadata, package paths, OAuth scope
 consistency, and generated-file parity. It also builds the three archives.
 Actual login, token refresh, and financial writes require separate end-to-end

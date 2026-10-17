@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "cashstream",
-  "version": "0.2.0",
-  "description": "Manage accounts, transactions, recurring flows, and budget envelopes through the CashStream MCP service.",
+  "version": "0.2.1",
+  "description": "Understand CashStream objects and relationships, and import transactions through its MCP service.",
   "author": { "name": "Quentin-BRG", "url": "https://github.com/Quentin-BRG" },
   "homepage": "https://cashstream.quentin-berger.fr",
   "repository": "https://github.com/Quentin-BRG/cashstream-plugin",

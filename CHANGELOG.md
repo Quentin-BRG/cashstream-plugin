@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.2.1 — 2026-10-17
+
+- Keep two skills: CashStream reference documentation and transaction import.
+- Explain objects, relationships, statuses, balances, split envelopes, business
+  schedules, occurrences, partial payments, and transfer mirror behavior.
+- Document current MCP tools and limits, removal of transaction categories,
+  and shared payee and bank identity rules.
+- Extend import guidance to pasted lists and messages, opening-balance overlap,
+  planned-entry reconciliation, split totals, and mirror outcomes.
+- Remove the proposed extra-skill roadmap and align plugin presentation with
+  the two-skill scope.
+
 ## 0.2.0 — 2026-10-17
 
 - Add a canonical Agent Plugins 1.0.0 package and generated Codex/Claude packages.
