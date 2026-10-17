@@ -5,7 +5,7 @@
 Connect your agent to [CashStream](https://cashstream.quentin-berger.fr) to manage
 accounts, transactions, recurring flows, and budget envelopes.
 
-Version `0.2.1` includes a portable Agent Plugins package, a Codex package, and a
+Version `0.2.2` includes a portable Agent Plugins package, a Codex package, and a
 Claude Code package. Both client packages are generated from the same canonical
 skills. Their MCP endpoint is `https://cashstream.quentin-berger.fr/mcp`.
 
@@ -23,6 +23,9 @@ skills. Their MCP endpoint is `https://cashstream.quentin-berger.fr/mcp`.
   lists, or messages. It matches existing records, reconciles settled planned
   entries, checks duplicates, assigns split envelopes, and links known payments
   to scheduled occurrences before writing the decided changes through MCP.
+  When identification, values, matches, or requested assignments are uncertain,
+  it asks the user and waits before the affected writes. Newly inferred recurring
+  flows are proposed with their schedule and require the user's decision.
 
 The package intentionally has two skills: the shared documentation and the
 transaction-import workflow. Both use the same object model and live MCP tools.
@@ -128,8 +131,8 @@ python scripts/validate_plugin.py
 python scripts/build_plugin.py
 ```
 
-Builds create `dist/cashstream-portable-0.2.1.zip`,
-`dist/cashstream-codex-0.2.1.zip`, and `dist/cashstream-claude-0.2.1.zip`.
+Builds create `dist/cashstream-portable-0.2.2.zip`,
+`dist/cashstream-codex-0.2.2.zip`, and `dist/cashstream-claude-0.2.2.zip`.
 CI validates schema conformance, skill metadata, package paths, OAuth scope
 consistency, and generated-file parity. It also builds the three archives.
 Actual login, token refresh, and financial writes require separate end-to-end

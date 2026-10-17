@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.2.2 — 2026-10-17
+
+- Require user clarification before writes affected by uncertain transaction
+  identities, values, duplicate matches, transfers, or requested assignments.
+- Group actionable questions, preserve prior answers, and wait for real replies;
+  unresolved rows cannot be silently skipped or stripped of uncertain links.
+- Propose inferred recurring flows with their concrete schedule and wait for
+  explicit authorization before creation, while preserving prior authorization.
+- Keep clear, already authorized imports free of redundant global confirmations.
+
 ## 0.2.1 — 2026-10-17
 
 - Keep two skills: CashStream reference documentation and transaction import.

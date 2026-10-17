@@ -1,4 +1,4 @@
 interface:
   display_name: "Import transactions"
-  short_description: "Import and reconcile CashStream transactions"
-  default_prompt: "Use $cashstream-import-statement to import these transactions into my CashStream account."
+  short_description: "Import transactions with guided clarification"
+  default_prompt: "Use $cashstream-import-statement to import these transactions, clarifying uncertain details and any new recurring flows with me."

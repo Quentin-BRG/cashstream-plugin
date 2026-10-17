@@ -158,7 +158,10 @@ interest, and it is distinct from an account whose category is `LOAN`.
 States are `active`, `paused`, and `ended`. Pausing or ending stops active
 projections while retaining recorded payments. A schedule never generates
 transactions automatically. A repeated merchant in a statement is not, by
-itself, permission to create a subscription or change a calendar.
+itself, permission to create a subscription or change a calendar. During import,
+propose the concrete new flow and clarify its schedule with the user before
+creating it, unless that same flow was already explicitly authorized. A general
+transaction import does not authorize new future schedules.
 
 ## Occurrences, settlements, and progress
 
