@@ -1,13 +1,13 @@
 {
   "name": "cashstream",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Understand CashStream objects and relationships, and import transactions through its MCP service.",
   "author": {
     "name": "Quentin-BRG",
     "url": "https://github.com/Quentin-BRG"
   },
   "homepage": "https://cashstream.quentin-berger.fr",
-  "repository": "https://github.com/Quentin-BRG/cashstream-plugin",
+  "repository": "https://github.com/cashstreamhq/cashstream-plugin",
   "license": "Apache-2.0",
   "keywords": [
     "cashstream",

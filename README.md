@@ -5,7 +5,7 @@
 Connect your agent to [CashStream](https://cashstream.quentin-berger.fr) to manage
 accounts, transactions, recurring flows, and budget envelopes.
 
-Version `0.2.2` includes a portable Agent Plugins package, a Codex package, and a
+Version `0.2.3` includes a portable Agent Plugins package, a Codex package, and a
 Claude Code package. Both client packages are generated from the same canonical
 skills. Their MCP endpoint is `https://cashstream.quentin-berger.fr/mcp`.
 
@@ -51,13 +51,19 @@ require supplied records, and reviews depend on how current the account data is.
 ## Install in Codex
 
 ```bash
-codex plugin marketplace add Quentin-BRG/cashstream-plugin
+codex plugin marketplace add cashstreamhq/cashstream-plugin
 codex plugin add cashstream@cashstream-marketplace
 ```
 
 Start a new session and complete OAuth when prompted. The marketplace name and
 the `plugins/cashstream` package path are preserved from the original `0.1.0`
 package so existing installations keep the same identity.
+
+The repository was transferred from `Quentin-BRG/cashstream-plugin` to
+`cashstreamhq/cashstream-plugin`. GitHub redirects the former clone URL; existing
+installations retain `cashstream@cashstream-marketplace`, the package paths,
+the public MCP endpoint, and the same OAuth scopes. New installations should use
+the organization URL above.
 
 To update the marketplace:
 
@@ -93,7 +99,7 @@ The Claude Code package follows the layout used by
 [synapse-plugin](https://github.com/Quentin-BRG/synapse-plugin):
 
 ```bash
-claude plugin marketplace add Quentin-BRG/cashstream-plugin
+claude plugin marketplace add cashstreamhq/cashstream-plugin
 claude plugin install cashstream@cashstream-marketplace
 ```
 
@@ -131,8 +137,8 @@ python scripts/validate_plugin.py
 python scripts/build_plugin.py
 ```
 
-Builds create `dist/cashstream-portable-0.2.2.zip`,
-`dist/cashstream-codex-0.2.2.zip`, and `dist/cashstream-claude-0.2.2.zip`.
+Builds create `dist/cashstream-portable-0.2.3.zip`,
+`dist/cashstream-codex-0.2.3.zip`, and `dist/cashstream-claude-0.2.3.zip`.
 CI validates schema conformance, skill metadata, package paths, OAuth scope
 consistency, and generated-file parity. It also builds the three archives.
 Actual login, token refresh, and financial writes require separate end-to-end
