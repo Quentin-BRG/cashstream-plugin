@@ -2,7 +2,12 @@
   "mcpServers": {
     "cashstream": {
       "type": "http",
-      "url": "https://cashstream.quentin-berger.fr/mcp"
+      "url": "https://cashstream.quentin-berger.fr/mcp",
+      "oauth_resource": "https://cashstream.quentin-berger.fr/mcp",
+      "scopes": [
+        "cashstream.read",
+        "cashstream.write"
+      ]
     }
   }
 }

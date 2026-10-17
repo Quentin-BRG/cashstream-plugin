@@ -1,0 +1,4 @@
+interface:
+  display_name: "CashStream"
+  short_description: "Read and update your CashStream budget"
+  default_prompt: "Use $cashstream to review my recent transactions and budget envelopes."

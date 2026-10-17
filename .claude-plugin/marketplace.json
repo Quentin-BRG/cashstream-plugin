@@ -1,0 +1,12 @@
+{
+  "name": "cashstream-marketplace",
+  "owner": { "name": "Quentin-BRG" },
+  "description": "CashStream personal finance workflows through OAuth-protected MCP.",
+  "plugins": [
+    {
+      "name": "cashstream",
+      "source": "./plugins/claude",
+      "description": "Manage accounts, transactions, recurring flows, and budget envelopes."
+    }
+  ]
+}
