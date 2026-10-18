@@ -1,6 +1,6 @@
 {
   "name": "cashstream",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Understand CashStream objects and relationships, and import transactions through its MCP service.",
   "author": {
     "name": "Quentin-BRG",
@@ -29,8 +29,8 @@
     ],
     "websiteURL": "https://cashstream.quentin-berger.fr",
     "brandColor": "#0C7C4F",
-    "composerIcon": "./assets/logo.png",
-    "logo": "./assets/logo.png",
+    "composerIcon": "./assets/logo.svg",
+    "logo": "./assets/logo.svg",
     "defaultPrompt": [
       "Explain how CashStream accounts, envelopes, and transactions relate.",
       "How do scheduled occurrences and actual payments work in CashStream?",
