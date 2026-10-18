@@ -34,8 +34,8 @@ def package_files(root: Path, client: str) -> dict[str, bytes]:
             "capabilities": ["Read", "Write"],
             "websiteURL": portable["homepage"],
             "brandColor": "#0C7C4F",
-            "composerIcon": "./assets/logo.png",
-            "logo": "./assets/logo.png",
+            "composerIcon": "./assets/logo.svg",
+            "logo": "./assets/logo.svg",
             "defaultPrompt": [
                 "Explain how CashStream accounts, envelopes, and transactions relate.",
                 "How do scheduled occurrences and actual payments work in CashStream?",
